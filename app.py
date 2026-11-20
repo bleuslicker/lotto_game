@@ -1,7 +1,7 @@
 import streamlit as st
 from lotto_utils import *
-'''
-st.title('🎱로또번호생성기')
+
+"""st.title('🎱로또번호생성기')
 n = st.number_input('몇게임할까요?', min_value=1, max_value=10, value=5)
 
 if st.button('번호뽑기'):
@@ -16,7 +16,7 @@ if st.button('번호뽑기'):
 if 'games' in st.session_state:
     for i in range(len(st.session_state.games)):
         st.write(f'**{i+1:2d}게임** : {to_text(st.session_state.games[i])}')
-'''
+"""
 st.title('🎱로또번호생성기')
 
 @st.cache_data
@@ -36,7 +36,7 @@ with tab1:
         for i in range(n):
             games.append(make_hot_game(count))
         st.session_state.games= games
-if'games' in st.session_state:
+if 'games' in st.session_state:
     for i in range(len(st.session_state.games)):
         st.write(f'**{i+ 1}게임** : {to_text(st.session_state.games[i])}')
 
